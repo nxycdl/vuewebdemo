@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Hello from '@/components/Hello';
 import World from '../components/World/World';
+import Redapple from '../components/Redapple/Redapple';
 
 Vue.use(Router);
 
@@ -15,7 +16,11 @@ export default new Router({
     {
       path: '/world',
       name: 'World',
-      component: World
+      component: World,
+      children: [{
+        path: 'red',
+        component: Redapple
+      }]
     }
   ]
 });
