@@ -17,37 +17,46 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <div class="world">
+      <World :msg="worldMsg"></World>
+    </div>
   </div>
+
 </template>
 
 <script>
-export default {
-  name: 'hello',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  import World from './World/World.vue';
+  export default {
+    name: 'hello',
+    data () {
+      return {
+        msg: 'Welcome to Your Vue.js App',
+        worldMsg: 'This is world Components H1'
+      };
+    },
+    components: {
+      World
     }
-  }
-}
+  };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
+  h1, h2 {
+    font-weight: normal;
+  }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
 
-a {
-  color: #42b983;
-}
+  a {
+    color: #42b983;
+  }
 </style>
