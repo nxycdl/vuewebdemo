@@ -7,6 +7,7 @@
         <ul>
           <li v-for="item in this.prodectList.pc.list ">
             <a v-bind:href="item.url">{{item.title}}</a>
+            <span v-if="item.hot" class="hot-tag">hot</span>
           </li>
         </ul>
         <div class="hr"></div>
@@ -14,6 +15,7 @@
         <ul>
           <li v-for="item in this.prodectList.app.list ">
             <a v-bind:href="item.url">{{item.title}}</a>
+            <span v-if="item.hot" class="hot-tag">hot</span>
           </li>
         </ul>
       </div>
@@ -41,6 +43,7 @@
 
 
 
+
             </div>
           </div>
         </div>
@@ -59,7 +62,7 @@
             title: 'pc产品title',
             list: [
               {title: '数据统计', url: 'www.163.com'},
-              {title: '数据预测', url: 'www.163.com'},
+              {title: '数据预测', url: 'www.163.com', hot: true},
               {title: '流量分析', url: 'www.163.com'},
               {title: '广告发布', url: 'www.163.com'}
             ]
@@ -71,7 +74,7 @@
               {title: '产品助手', url: 'www.163.com'},
               {title: '智能地图', url: 'www.163.com'},
               {title: '团队语音', url: 'www.163.com'},
-              {title: '团队建设', url: 'www.163.com'},
+              {title: '团队建设', url: 'www.163.com', hot: true},
               {title: '团队合作', url: 'www.163.com'}
             ]
           }
