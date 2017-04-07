@@ -18,7 +18,36 @@
       .hot-tag
         background-color: red;
         color: white;
-        font-size:10px;
+        font-size: 10px;
   .index-right
     flex: 1
-    background-color: #8B7D7B;
+    background-color: rgba(#8B7D7B, 0.2);
+    .index-board-list
+      .index-board-item
+        float: left;
+        width: 300px;
+        height: 128px;
+        margin: 5px 0 0px 10px;
+        border 1px solid white;
+        .index-board-item-inner
+          margin-left: 150px;
+
+          line-height 20px;
+
+          .index-board-button
+            width 80px;
+            height 30px;
+            line-height: 30px;
+            background-color cornflowerblue;
+            border 2px solid white
+        &.line-last
+          margin-left: 10px;
+          margin-right 0;
+        &.border-index0
+          background: white url(../../assets/image/1.png) no-repeat;
+        &.border-index1
+          background: white url(../../assets/image/2.png) no-repeat;
+        &.border-index2
+          background: white url(../../assets/image/3.png) no-repeat;
+        &.border-index3
+          background: white url(../../assets/image/4.png) no-repeat;

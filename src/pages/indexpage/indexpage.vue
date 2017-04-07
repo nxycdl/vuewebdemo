@@ -22,21 +22,26 @@
       <div class="hr"></div>
       <div class="new">
         <h1>最新消息</h1>
-
+        <ul>
+          <li v-for="item in this.newsList">
+            <a v-bind:href="item.url">{{item.title}}</a>
+            <span v-if="item.hot" class="hot-tag">hot</span>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="index-right">
       <!--<slide-show></slide-show>-->
       <div class="index-board-list">
-        <div class="index-board-item">
+        <div class="index-board-item" v-for="(item,index) in boardList"
+             :class="[{'line-last' : index%2===1 },'border-index'+index]">
+
           <div class="index-board-item-inner">
-            <h2>title</h2>
-            <p>description</p>
+
+            <h2>{{item.title}}</h2>
+            <p>{{item.description}}</p>
             <div class="index-board-button">
               立即购买
-
-
-
 
 
 
@@ -79,8 +84,22 @@
             ]
           }
         },
-        newsList: {}
+        newsList: [
+          {title: 'news1', url: 'www.163.com'},
+          {title: 'news1', url: 'www.163.com', hot: true},
+          {title: 'news1', url: 'www.163.com'},
+          {title: 'news1', url: 'www.163.com'}
+        ],
+        boardList: [{title: '开放产品2', description: '开发产品是一款开放产品', saleout: false},
+          {title: '开放产品3', description: '开发产品是一款开放产品', saleout: false},
+          {title: '开放产品4', description: '开发产品是一款开放产品', saleout: false},
+          {title: '开放产品5', description: '开发产品是一款开放产品', saleout: false}]
       };
+    },
+    mounted() {
+      setTimeout(() => {
+        this.prodectList.pc.list.push({title: '广告发布1', url: 'www.163.com', hot: true});
+      }, 5000);
     }
   };
 </script>
