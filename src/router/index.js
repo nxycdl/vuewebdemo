@@ -6,9 +6,11 @@ import ForecatePage from '../pages/Detail/ForecatePage/ForecatePage.vue';
 import CountPage from '../pages/Detail/Countpage/Countpage.vue';
 import PublicPage from '../pages/Detail/Publicpage/Publicpage.vue';
 import Analysis from '../pages/Detail/Analysis/Analysis.vue';
+import {ClientTable} from 'vue-tables-2';
 import axios from 'axios';
 
 Vue.use(Router);
+Vue.use(ClientTable, {}, false, require('./template.js')('client'));
 Vue.prototype.$http = axios;
 
 export default new Router({

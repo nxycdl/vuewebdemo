@@ -11,6 +11,12 @@
         <div class="sales-board-line-left">
           购买数量
 
+
+
+
+
+
+
         </div>
         <div class="sales-board-line-right">
           <multiselect
@@ -23,6 +29,12 @@
       <div class="sales-board-line">
         <div class="sales-board-line-left">
           产品类型
+
+
+
+
+
+
 
         </div>
         <div class="sales-board-line-right">
@@ -43,6 +55,12 @@
 
 
 
+
+
+
+
+
+
         </div>
         <div class="sales-board-line-right">
 
@@ -51,6 +69,12 @@
       <div class="sales-board-line">
         <div class="sales-board-line-left">
           总价:
+
+
+
+
+
+
 
 
 
@@ -78,7 +102,7 @@
     </div>
 
     <div class="sales-board-table">
-
+      <v-client-table :data="tableData" :columns="columns" :options="options"></v-client-table>
     </div>
 
   </div>
@@ -86,14 +110,24 @@
 
 <script>
   import Multiselect from 'vue-multiselect';
-  // import Vuetable from 'vuetable-2/src/components/Vuetable';
   export default {
     data() {
       return {
         countList: [1, 2, 3, 4, 5, 6, 7, 8, 9],
         productType: ['入门级', '菜鸟级', '骨灰级'],
         selectedCount: null,
-        selectedType: null
+        selectedType: null,
+        columns: ['id', 'name', 'age'],
+        tableData: [
+          {id: 1, name: 'John', age: '20'},
+          {id: 2, name: 'Jane', age: '24'},
+          {id: 3, name: 'Susan', age: '16'},
+          {id: 4, name: 'Chris', age: '55'},
+          {id: 5, name: 'Dan', age: '40'}
+        ],
+        options: {
+          dateFormat: 'YYYYMMDD'
+        }
       };
     },
     components: {
