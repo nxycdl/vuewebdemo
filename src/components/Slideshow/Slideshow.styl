@@ -1,5 +1,6 @@
 .slide-show
   position relative;
+  top: 25px;
   width: 100%;
   color: rgba(7, 17, 27, 0.2)
   .slide-img
@@ -16,6 +17,13 @@
   .slide-pages
     float right;
     display inline-block;
+    ul
+      list-style-type: none
     li
       display inline;
       margin-left 5px;
+      color: #7e8c8d
+      a
+        &.on
+          color red
+

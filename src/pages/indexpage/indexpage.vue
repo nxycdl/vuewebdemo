@@ -32,7 +32,7 @@
     </div>
     <div class="index-right">
       <!--<slide-show></slide-show>-->
-      <Slideshow :slides="slides" :invTime="invTime"></Slideshow>
+      <Slideshow :slides="slides" :invTime="invTime" @onchangefromchildrencomponent="dosomethings"></Slideshow>
       <div class="index-board-list">
         <div class="index-board-item" v-for="(item,index) in boardList"
              :class="[{'line-last' : index%2===1 },'border-index'+index]">
@@ -43,12 +43,6 @@
             <p>{{item.description}}</p>
             <div class="index-board-button">
               立即购买
-
-
-
-
-
-
 
 
             </div>
@@ -108,8 +102,8 @@
     },
     mounted() {
       /* setTimeout(() => {
-        this.prodectList.pc.list.push({title: '广告发布1', url: 'www.163.com', hot: true});
-      }, 5000); */
+       this.prodectList.pc.list.push({title: '广告发布1', url: 'www.163.com', hot: true});
+       }, 5000); */
       this.getNewsList3();
     },
     methods: {
@@ -138,7 +132,8 @@
         }).catch(error => {
           console.log(error);
         });
-      }
+      },
+      dosomethings(index) {}
     },
     components: {
       Slideshow
