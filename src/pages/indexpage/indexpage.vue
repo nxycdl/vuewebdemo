@@ -45,6 +45,7 @@
               立即购买
 
 
+
             </div>
           </div>
         </div>
@@ -122,7 +123,9 @@
         });
       },
       getNewsList3() {
+        console.log('动态获取NewsList');
         this.$http.get('/mock/logindl/newList').then(response => {
+        // this.$http.get('http://www.mockhttp.cn/mock/logindl/newList').then(response => {
           if (response.status === 200) {
             let data = response.data;
             this.newsList = data;
@@ -133,7 +136,8 @@
           console.log(error);
         });
       },
-      dosomethings(index) {}
+      dosomethings(index) {
+      }
     },
     components: {
       Slideshow
